@@ -9,8 +9,6 @@ function post_comment(e, comments) {
 function delete_comment(e, comments) {
     e.preventDefault();
 
-    
-
     comments.removeLast();
     location.reload();
 }

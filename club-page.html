@@ -11,20 +11,10 @@
     <body>
         <div>
             <h1>Club Information</h1>
-        </div>
-
-        <script>
-            const schoolname = localStorage.getItem("school-name");
-            const clubname = localStorage.getItem("club-name");
-            const info = localStorage.getItem("info-comments")[0];
-            const comments = localStorage.getItem("info-comments")[1];
-        </script>
-
-        <div>
-            <div class="displayed-comments">
-                
-            </div>
-
+            <h2><span id="school-name-input"></h2>
+            <h3><span id="club-name-input"></span></h3>
+            <h4><span id="club-info"></span></h4>
+            <h5><span id="club-comments"></span></h5>
             <div class="inputs">
                 <form class="comment">
                     <div class="comment-inputs">
@@ -36,10 +26,20 @@
             </div>
         </div>
 
-
         <script>
+            const schoolname = localStorage.getItem("school-name");
+            const clubname = localStorage.getItem("club-name");
+            const info = localStorage.getItem("info-comments")[0];
+            const comments = localStorage.getItem("info-comments")[1];
 
+            document.getelementById("school-name-input").textContent = schoolname;
+            document.getelementById("club-name-input").textContent = clubname;
+            document.getelementById("club-info").textContent = info;
+            if (comments != emptyString) {
+                document.getelementById("club-comments").textContent = comments;
+            } else {
+                document.getelementById("club-comments").textContent = "There is no comment yet. Please post the first comment!";
+            }
         </script>
-
     </body>
 </html>
