@@ -21,14 +21,15 @@
                     <label for="school"><b>School name (required):</b></label>
                     <input type="text" id="school-name" placeholder="UC Berkeley">
                 </div>
+                <button type="submit-school" onclick="submission_school(event)">Browse</button>
             </form>
 
             <form class="club-names">
                 <div class="club-inputs">
-                    <label for="club">Club name:</label>
-                    <input type="text" id="club-name" placeholder="Type full club name">
+                    <label for="club">If you are looking for a specific club:</label>
+                    <input type="text" id="club-name" placeholder="Please type full club name">
                 </div>
-                <button type="submit-club" onclick="submission_confirmation(event)">Search</button>
+                <button type="submit-club" onclick="submission_club(event)">Search</button>
             </form>
         </div>
     </body>

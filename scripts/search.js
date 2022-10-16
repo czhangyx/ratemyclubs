@@ -1,8 +1,10 @@
 function click_club(e) {
     e.preventDefault();
 
-    localStorage.setItem("school-name", school);
+    var club = document.getElementById("").value;
+    var infoComment = localStorage.getItem("club-list");
     localStorage.setItem("club-name", club);
-    localStorage.setItem("dictionary", school_to_club);
+    localStorage.setItem("info-comments", infoComment);
+
     window.location.href = "club-page.html";
 }

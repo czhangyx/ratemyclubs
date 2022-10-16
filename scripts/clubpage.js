@@ -1,9 +1,16 @@
-function submission_confirmation(e) {
+function post_comment(e, comments) {
     e.preventDefault();
 
-    var school =  document.getElementById("school_name").value
-    var club =  document.getElementById("club_name").value
+    var comment =  document.getElementById("comment-input").value;
+    comments.push(comment);
+    location.reload();
+}
 
-    console.log(school)
-    console.log(club + club.info)
+function delete_comment(e, comments) {
+    e.preventDefault();
+
+    
+
+    comments.removeLast();
+    location.reload();
 }

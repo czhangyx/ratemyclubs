@@ -14,11 +14,17 @@
         </div>
 
         <script>
-            const clubname = document.getElementById("club-name").value
-            const schoolname = document
+            const schoolname = localStorage.getItem("school-name");
+            const clubname = localStorage.getItem("club-name");
+            const info = localStorage.getItem("info-comments")[0];
+            const comments = localStorage.getItem("info-comments")[1];
         </script>
 
         <div>
+            <div class="displayed-comments">
+                
+            </div>
+
             <div class="inputs">
                 <form class="comment">
                     <div class="comment-inputs">
@@ -26,13 +32,13 @@
                     </div>
                 </form>
                 <textarea name="text" id="comment" placeholder="Type your comment here" cols="95" rows="10"></textarea>
+                <button type="submit-comment" id="comment-input" onclick="post_comment(event, comments)">Post</button>
             </div>
         </div>
 
-        <button type="submit-comment" onclick="submission_confirmation(event)">Post</button>
 
         <script>
-            localStorage.setItem('clubinfo', clubinfo)
+
         </script>
 
     </body>
