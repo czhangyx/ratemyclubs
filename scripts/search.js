@@ -1,7 +1,8 @@
-function click_search(e) {
+function click_club(e) {
+    e.preventDefault();
 
-    const schoolname = localStorage.getItem("school-name");
-    const clubname = localStorage.getItem("club-name");
-
-    document.getElementById("school-name-input").textContent = schoolname;
+    localStorage.setItem("school-name", school);
+    localStorage.setItem("club-name", club);
+    localStorage.setItem("dictionary", school_to_club);
+    window.location.href = "club-page.html";
 }
