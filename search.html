@@ -4,14 +4,21 @@
         <meta charset="utf-8" />
         <link href="styles/search-styles.css" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet" />
-        <script src="FIXME"></script>
+        <script src="scripts/search.js"></script>
     </head>
 
     <body>
-        <div class="school-intermediate">
-            <h1>School Name</h1>
+        <div class="search">
+            <h1><span id="school-name-input"></span></h1>
             <li>club 1</li>
             <li>club 2</li>
         </div>
+        
+        <script>
+            const schoolname = localStorage.getItem("school-name");
+            const clubname = localStorage.getItem("club-name");
+
+            document.getElementById("school-name-input").textContent = schoolname;
+        </script>
     </body>
 </html>

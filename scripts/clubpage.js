@@ -6,5 +6,4 @@ function submission_confirmation(e) {
 
     console.log(school)
     console.log(club + club.info)
-
 }
