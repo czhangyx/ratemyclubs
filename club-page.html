@@ -5,7 +5,7 @@
         <title>Club Page</title>
         <link href="styles/clubpage-style.css" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet" />
-        <script src="scripts/main.js"></script>
+        <script src="scripts/clubpage.js"></script>
     </head>
 
     <body>
@@ -41,5 +41,43 @@
                 document.getElementById("club-comments").textContent = "There is no comment yet. Please post the first comment!";
             }
         </script>
+
+        <div>
+            <div class="displayed-comments">
+                <button id="authentic" type="hidden" onclick="delete_comment(event, comments)">delete</button>
+
+                <script>
+                    window.onload = function() {
+                        var currentIP = $.getJSON('https://api.ipify.org?format=jsonp&callback=?', function(data) {
+                            console.log(JSON.stringify(data, null, 2));
+                        });
+                        for (const [ip, comment] of Object.entries(comments)) {
+                            if (ip === currentIP) {
+                                document.getElementById("authentic").style.display = "block";
+                            } else {
+                                document.getElementById("authentic").style.display = "none";
+                            }
+                        }
+                    }
+                </script>
+
+            </div>
+
+            <div class="inputs">
+                <form class="comment">
+                    <div class="comment-inputs">
+                        <label for="post"><b>Please post your comments here:</b></label><br>
+                    </div>
+                </form>
+                <textarea name="text" id="comment" placeholder="Type your comment here" cols="95" rows="10"></textarea>
+                <button type="submit-comment" id="comment-input" onclick="post_comment(event, comments)">Post</button>
+            </div>
+        </div>
+
+
+        <script>
+
+        </script>
+
     </body>
 </html>
