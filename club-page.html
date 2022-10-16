@@ -11,7 +11,7 @@
     <body>
         <div class="information">
             <h1>Club Information</h1>
-            <h2><span id="school-name-input"></h2>
+            <h2><span id="school-name-input"></span></h2>
             <h3><span id="club-name-input"></span></h3>
             <h4><span id="club-info"></span></h4>
             <h5><span id="club-comments"></span></h5>
@@ -29,16 +29,16 @@
         <script>
             const schoolname = localStorage.getItem("school-name");
             const clubname = localStorage.getItem("club-name");
-            const info = localStorage.getItem("info-comments")[0];
+            const info = localStorage.getItem("info-comments");
             const comments = localStorage.getItem("info-comments")[1];
 
-            document.getelementById("school-name-input").textContent = schoolname;
-            document.getelementById("club-name-input").textContent = clubname;
-            document.getelementById("club-info").textContent = info;
+            document.getElementById("school-name-input").innerHTML = schoolname;
+            document.getElementById("club-name-input").textContent = clubname;
+            document.getElementById("club-info").textContent = info;
             if (comments != emptyString) {
-                document.getelementById("club-comments").textContent = comments;
+                document.getElementById("club-comments").textContent = comments;
             } else {
-                document.getelementById("club-comments").textContent = "There is no comment yet. Please post the first comment!";
+                document.getElementById("club-comments").textContent = "There is no comment yet. Please post the first comment!";
             }
         </script>
 
