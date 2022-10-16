@@ -45,8 +45,8 @@ function define_dictionary() {
 function submission_school(e) {
     e.preventDefault();
 
-    var school = document.getElementById("school-name").value;
-    var dictionary = define_dictionary();
+    const school = document.getElementById("school-name").value;
+    const dictionary = define_dictionary();
 
     if (school === "") {
         alert("School name can't be empty!");
@@ -62,9 +62,9 @@ function submission_school(e) {
 function submission_club(e) {
     e.preventDefault();
 
-    var school = document.getElementById("school-name").value;
-    var club = document.getElementById("club-name").value;
-    var dictionary = define_dictionary();
+    const school = document.getElementById("school-name").value;
+    const club = document.getElementById("club-name").value;
+    const dictionary = define_dictionary();
 
     if (school === "") {
         alert("School name can't be empty!");

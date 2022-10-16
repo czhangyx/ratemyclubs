@@ -45,7 +45,7 @@
             <button id="authentic" type="hidden" onclick="delete_comment(event, document.getElementById('info-comments')[1])">delete</button>
             <script>
                 window.onload = function() {
-                    var currentIP = fetch("https://api.ipify.org?format=json").then(results => results.json());
+                    const currentIP = fetch("https://api.ipify.org?format=json").then(results => results.json());
                     for (const [ip, comment] of Object.entries(comments)) {
                         if (ip === currentIP) {
                             document.getElementById("authentic").style.display = "block";
