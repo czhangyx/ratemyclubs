@@ -16,6 +16,48 @@
             <h4><span id="club-info"></span></h4>
             <h5><span id="club-comments"></span></h5>
         </div>
+
+        <script>
+            const schoolname = localStorage.getItem("school-name");
+            const clubname = localStorage.getItem("club-name");
+            const info = localStorage.getItem("info-comments");
+
+            document.getElementById("school-name-input").innerHTML = schoolname;
+            document.getElementById("club-name-input").textContent = clubname;
+            document.getElementById("club-info").textContent = info;
+        </script>
+
+
+        <div class="displayed-comments">
+            <script>
+            const comments = localStorage.getItem("info-comments")[1];
+            if (comments != null) {
+                const comments_list = Object.values(comments);
+                for (i = 0; i < comments_list.length; i++) {
+                    const p = document.createElement(p);
+                    p.innerText = comments_list[i];
+                    document.body.appendChild(p);
+                }
+            } else {
+                document.getElementById("club-comments").textContent = "There is no comment yet. Be the first one to comment!";
+            }
+            </script>
+            <button id="authentic" type="hidden" onclick="delete_comment(event, comments)">delete</button>
+            <script>
+                window.onload = function() {
+                    var currentIP = fetch("https://api.ipify.org?format=json").then(results => results.json());
+                    for (const [ip, comment] of Object.entries(comments)) {
+                        if (ip === currentIP) {
+                            document.getElementById("authentic").style.display = "block";
+                        } else {
+                            document.getElementById("authentic").style.display = "none";
+                        }
+                    }
+                }
+            </script>
+
+        </div>
+
         <div class="inputs">
             <form class="comment">
                 <div class="comment-inputs">
@@ -25,56 +67,5 @@
             <textarea name="text" id="comment" placeholder="Type your comment here" cols="95" rows="10"></textarea>
             <button type="submit-comment" id="comment-input" onclick="post_comment(event, comments)">Post</button>
         </div>
-
-        <script>
-            const schoolname = localStorage.getItem("school-name");
-            const clubname = localStorage.getItem("club-name");
-            const info = localStorage.getItem("info-comments");
-            const comments = localStorage.getItem("info-comments")[1];
-
-            document.getElementById("school-name-input").innerHTML = schoolname;
-            document.getElementById("club-name-input").textContent = clubname;
-            document.getElementById("club-info").textContent = info;
-            if (comments != emptyString) {
-                document.getElementById("club-comments").textContent = comments;
-            } else {
-                document.getElementById("club-comments").textContent = "There is no comment yet. Please post the first comment!";
-            }
-        </script>
-
-        <div>
-            <div class="displayed-comments">
-                <button id="authentic" type="hidden" onclick="delete_comment(event, comments)">delete</button>
-                <script>
-                    window.onload = function() {
-                        var currentIP = fetch("https://api.ipify.org?format=json").then(results => results.json());
-                        for (const [ip, comment] of Object.entries(comments)) {
-                            if (ip === currentIP) {
-                                document.getElementById("authentic").style.display = "block";
-                            } else {
-                                document.getElementById("authentic").style.display = "none";
-                            }
-                        }
-                    }
-                </script>
-
-            </div>
-
-            <div class="inputs">
-                <form class="comment">
-                    <div class="comment-inputs">
-                        <label for="post"><b>Please post your comments here:</b></label><br>
-                    </div>
-                </form>
-                <textarea name="text" id="comment" placeholder="Type your comment here" cols="95" rows="10"></textarea>
-                <button type="submit-comment" id="comment-input" onclick="post_comment(event, comments)">Post</button>
-            </div>
-        </div>
-
-
-        <script>
-
-        </script>
-
     </body>
 </html>

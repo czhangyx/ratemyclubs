@@ -3,7 +3,8 @@ function post_comment(e, comments) {
 
     var comment = document.getElementById("comment-input").value;
     var ip = fetch("https://api.ipify.org?format=json").then(results => results.json());
-    var ipComment = {ip: comment};
+    var ipComment = {};
+    ipComment[ip] = comment;
     comments.push(ipComment);
     location.reload();
 }
