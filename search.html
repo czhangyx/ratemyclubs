@@ -9,16 +9,24 @@
 
     <body>
         <div class="search">
-            <h1><span id="school-name-input"></span></h1>
-            <li>club 1</li>
-            <li>club 2</li>
+            <h2><span id="school-name-input"></span></h2>
+            <div class="clublist">
+
+            </div>
         </div>
         
         <script>
             const schoolname = localStorage.getItem("school-name");
-            const clubname = localStorage.getItem("club-name");
+            const clublist = localStorage.getItem("dictionary").get(schoolname.toLowerCase);
+            const currenturl = window.location.search;
+
+            console.log(currenturl);
 
             document.getElementById("school-name-input").textContent = schoolname;
+
+            clublist.array.forEach(element => {
+                customizedurl = currenturl.searchParams.append("club", element)
+            });
         </script>
     </body>
 </html>
