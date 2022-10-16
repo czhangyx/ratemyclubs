@@ -1,32 +1,31 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" background="images/background.jpeg">
     <head>
         <meta charset="utf-8" />
         <title>Rate My Clubs</title>
         <meta content="Want to join a club but unsure about its culture? Rate My Clubs has all information you need!">
-        <link href="styles/homepage-styles.css" rel="stylesheet" />
+        <link href="styles/index-styles.css" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet" />
         <script src="FIXME"></script>
     </head>
 
-    <body background="images/background.jpeg">
+    <body>
         <div class="background"></div>
         <div class="mainpage">
             <h1>Rate My Clubs</h1>
             <h2>Enter your school to get started</h2>
             <form class="school-names">
                 <div class="school-inputs">
-                    <label for="school">School name:</label>
+                    <label for="school">School name (required):</label>
                     <input type="text" id="school-name" placeholder="Type school name">
                 </div>
                 <button type="submit-school" onclick="submission_confirmation(event)">Search</button> 
                 <a html="school-intermediate.html"></a>
             </form>
 
-            <h3>OR ...</h3>
             <form class="club-names">
                 <div class="club-inputs">
-                    <label for="club">If you want to directly look up the club' s name:</label>
+                    <label for="club">Club name:</label>
                     <input type="text" id="club-name" placeholder="Type club name">
                 </div>
                 <button type="submit-club" onclick="submission_confirmation(event)">Search</button>
