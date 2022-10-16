@@ -1,0 +1,27 @@
+html {
+    font-size: 12px; /* px means "pixels": the base font size is now 10 pixels high */
+    font-family: "Courgette"; /* this should be the rest of the output you got from Google Fonts */
+    background-color: #d5cec3;
+}
+
+.background {
+    background-image: url(images/background.jpeg);
+    filter: blur(3px);
+}
+
+body {
+    margin-top: 10%;
+    font-size: 20px;
+}
+
+input {
+    font-family: "Courgette";
+    font-size: 15px;
+}
+
+button {
+    font-size: 15px;
+    font-family: "Courgette";
+    background-color: goldenrod;
+    color: white;
+}

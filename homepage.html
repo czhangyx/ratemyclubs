@@ -3,12 +3,14 @@
     <head>
         <meta charset="utf-8" />
         <title>Rate My Clubs</title>
-        <link href="styles/rmc-styles.css" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
+        <meta content="Want to join a club but unsure about its culture? Rate My Clubs has all information you need!">
+        <link href="styles/homepage-styles.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet" />
         <script src="FIXME"></script>
     </head>
 
-    <body>
+    <body background="images/background.jpeg">
+        <div class="background"></div>
         <div class="mainpage">
             <h1>Rate My Clubs</h1>
             <h2>Enter your school to get started</h2>
@@ -17,18 +19,18 @@
                     <label for="school">School name:</label>
                     <input type="text" id="school-name" placeholder="Type school name">
                 </div>
-                <button type="submit-school" onclick="submission_confirmation(event)">Search</button>
+                <button type="submit-school" onclick="submission_confirmation(event)">Search</button> 
+                <a html="school-intermediate.html"></a>
             </form>
 
-            <h3>OR if you want to directly look up the clubs name</h3>
+            <h3>OR ...</h3>
             <form class="club-names">
                 <div class="club-inputs">
-                    <label for="club">Club name:</label>
+                    <label for="club">If you want to directly look up the club' s name:</label>
                     <input type="text" id="club-name" placeholder="Type club name">
                 </div>
                 <button type="submit-club" onclick="submission_confirmation(event)">Search</button>
             </form>
-
         </div>
     </body>
 </html>
