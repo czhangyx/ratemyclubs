@@ -16,17 +16,18 @@
             const schoolname = localStorage.getItem("school-name");
             document.getElementById("school-name-input").textContent = schoolname;
 
-            const clublist = localStorage.getItem("club-list");
+            const clublist = JSON.parse(localStorage.getItem("club-list"));
             const keys = [];
-            for (const key in clublist) {
+            for (const [key, value] of Object.entries(clublist)) {
                 if (clublist.hasOwnProperty(key)) {
                     keys.push(key);
                 }
             }
-            console.log(keys);
+
             for (i = 0; i < keys.length; i++) {
                 const li = document.createElement("li");
-                li.innerText = keys[i];
+                const clubname = keys[i];
+                li.innerHTML = "<a href='#' onclick='click_club(event, \"" + keys[i] + "\")'>" + clubname + "</a>";
                 document.body.appendChild(li);
             }
         </script>

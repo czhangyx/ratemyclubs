@@ -5,7 +5,7 @@
         <title>Club Page</title>
         <link href="styles/clubpage-style.css" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet" />
-        <script src="scripts/main.js"></script>
+        <script src="scripts/clubpage.js"></script>
     </head>
 
     <body>
@@ -22,7 +22,23 @@
 
         <div>
             <div class="displayed-comments">
-                
+                <button id="authentic" type="hidden" onclick="delete_comment(event, comments)">delete</button>
+
+                <script>
+                    window.onload = function() {
+                        var currentIP = $.getJSON('https://api.ipify.org?format=jsonp&callback=?', function(data) {
+                            console.log(JSON.stringify(data, null, 2));
+                        });
+                        for (const [ip, comment] of Object.entries(comments)) {
+                            if (ip === currentIP) {
+                                document.getElementById("authentic").style.display = "block";
+                            } else {
+                                document.getElementById("authentic").style.display = "none";
+                            }
+                        }
+                    }
+                </script>
+
             </div>
 
             <div class="inputs">
