@@ -34,7 +34,7 @@
             if (comments != null) {
                 const comments_list = Object.values(comments);
                 for (i = 0; i < comments_list.length; i++) {
-                    const p = document.createElement(p);
+                    const p = document.createElement("p");
                     p.innerText = comments_list[i];
                     document.body.appendChild(p);
                 }
@@ -42,7 +42,7 @@
                 document.getElementById("club-comments").textContent = "There is no comment yet. Be the first one to comment!";
             }
             </script>
-            <button id="authentic" type="hidden" onclick="delete_comment(event, comments)">delete</button>
+            <button id="authentic" type="hidden" onclick="delete_comment(event, document.getElementById('info-comments')[1])">delete</button>
             <script>
                 window.onload = function() {
                     var currentIP = fetch("https://api.ipify.org?format=json").then(results => results.json());
@@ -55,7 +55,6 @@
                     }
                 }
             </script>
-
         </div>
 
         <div class="inputs">
@@ -65,7 +64,7 @@
                 </div>
             </form>
             <textarea name="text" id="comment" placeholder="Type your comment here" cols="95" rows="10"></textarea>
-            <button type="submit-comment" id="comment-input" onclick="post_comment(event, comments)">Post</button>
+            <button type="submit-comment" id="comment-input" onclick="post_comment(event, document.getElementById('info-comments'))">Post</button>
         </div>
     </body>
 </html>
