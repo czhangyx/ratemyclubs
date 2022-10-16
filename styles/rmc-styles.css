@@ -1,0 +1,23 @@
+html {
+    font-size: 12px; /* px means "pixels": the base font size is now 10 pixels high */
+    font-family: "Open Sans", ; /* this should be the rest of the output you got from Google Fonts */
+    background-color: #a9dff5;
+}
+
+body {
+    font-size: 20px;
+    background-image:
+    background-size:
+    background-position:
+}
+
+.school-names {
+    margin-top: 15%;
+    margin-left: 20%;
+}
+
+button {
+    font-size: 15px;
+    background-color: darkblue;
+    color: white;
+}
