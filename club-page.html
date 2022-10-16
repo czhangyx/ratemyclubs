@@ -9,8 +9,21 @@
     </head>
 
     <body>
-        <div>
+        <div class="information">
             <h1>Club Information</h1>
+            <h2><span id="school-name-input"></h2>
+            <h3><span id="club-name-input"></span></h3>
+            <h4><span id="club-info"></span></h4>
+            <h5><span id="club-comments"></span></h5>
+        </div>
+        <div class="inputs">
+            <form class="comment">
+                <div class="comment-inputs">
+                    <label for="post"><b>Please post your comments here:</b></label><br>
+                </div>
+            </form>
+            <textarea name="text" id="comment" placeholder="Type your comment here" cols="95" rows="10"></textarea>
+            <button type="submit-comment" id="comment-input" onclick="post_comment(event, comments)">Post</button>
         </div>
 
         <script>
@@ -18,6 +31,15 @@
             const clubname = localStorage.getItem("club-name");
             const info = localStorage.getItem("info-comments")[0];
             const comments = localStorage.getItem("info-comments")[1];
+
+            document.getelementById("school-name-input").textContent = schoolname;
+            document.getelementById("club-name-input").textContent = clubname;
+            document.getelementById("club-info").textContent = info;
+            if (comments != emptyString) {
+                document.getelementById("club-comments").textContent = comments;
+            } else {
+                document.getelementById("club-comments").textContent = "There is no comment yet. Please post the first comment!";
+            }
         </script>
 
         <div>

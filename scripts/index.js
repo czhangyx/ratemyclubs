@@ -75,6 +75,7 @@ function submission_club(e) {
     } else {
         localStorage.setItem("school-name", school);
         localStorage.setItem("club-name", club);
+        localStorage.setItem("info-comments", dictionary[school.toLowerCase()][club]);
         window.location.href = "club-page.html";
     }
 }
